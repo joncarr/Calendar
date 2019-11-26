@@ -1,0 +1,124 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --clr-bg: #dfe6e9;
+    --clr-primary: #00b894;
+    --clr-primary-rgba: rgba(0, 184, 148, .25);
+    --clr-font: #333;
+    --font: 'Montserrat', sans-serif;
+
+}
+
+body {
+    height: 100vh;
+    background-color: var(--clr-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font);
+    color: var(--clr-font);
+}
+
+.calendar {
+    width: 700px;
+    box-shadow: 0 0 10px 5px rgba(0,0,0, .2);
+    background-color: white;
+}
+
+.cal-header {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    background-color: var(--clr-primary);
+}
+
+.cal-header__next-button,
+.cal-header__prev-button {
+    font-size: 1rem;
+    margin: 1em;
+    padding: 10px 1em;
+    background-color: rgba(0,0,0, .2);
+    border-radius: 50%;
+}
+
+.cal-header__next-button:hover,
+.cal-header__next-button:focus,
+.cal-header__prev-button:hover,
+.cal-header__prev-button:focus {
+    background-color: rgba(0,0,0, .35);
+    cursor: pointer;
+}
+
+
+.cal-header__next-button,
+.cal-header__prev-button,
+.cal-header__month {
+    font-weight: 700;
+}
+
+.cal-header__month {
+    margin: 1.5em 1em;
+    font-size: 1.2rem;
+}
+
+.cal-header__date {
+    margin: .3em 1em;
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.cal-day-header {
+    display: grid;
+    color: white;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    width: 100%;
+    background-color: var(--clr-primary);
+    filter: brightness(.85);
+}
+
+.cal-day-header p {
+    padding: .3em .3em;
+}
+
+.cal-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    padding: 1em 0;
+}
+
+
+.cal-days--prev-month {
+    opacity: 35%;
+}
+
+.cal-days--today {
+    color: white;
+    background-color: var(--clr-primary);
+}
+
+.cal-days--today:hover {
+    background-color: var(--clr-primary);
+    filter: saturate(150%);
+}
+
+.cal-days div {
+    margin-bottom: 2em;
+    height: 100%;
+    padding: 15px 5px;
+}
+
+.cal-days div:hover {
+    cursor: pointer;
+    background-color: var(--clr-primary-rgba);
+}
